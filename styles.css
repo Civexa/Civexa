@@ -1,0 +1,657 @@
+/* Bloquear el desplazamiento horizontal en toda la página */
+body {
+  overflow-x: hidden;
+}
+
+/* Asegurarse de que el HTML también no permita el desplazamiento horizontal */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+/* Resetear márgenes y rellenos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: transparent; /* Transparente por defecto */
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Cuando se hace scroll, cambiar el color del fondo */
+header.scrolled {
+  background-color: #3A86FF; /* Color del menú cuando se desplaza */
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+nav .logo img {
+  height: 50px; /* Ajustar el tamaño del logo */
+  width: auto; /* Mantener la proporción del logo */
+}
+
+nav .nav-links {
+  display: flex;
+  list-style: none;
+}
+
+nav .nav-links li {
+  margin: 0 15px;
+}
+
+/* Estilo para los enlaces de navegación */
+nav .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Agregar hover a los enlaces */
+nav .nav-links a:hover {
+  color: #FFB800;
+  transform: none; /* Eliminado el efecto de escala */
+}
+
+/* Icono de menú para dispositivos móviles */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #3A86FF;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  /* Mostrar el icono de menú */
+  .menu-icon {
+    display: block; /* Mostrar el ícono del menú en pantallas pequeñas */
+  }
+
+  /* Ocultar el menú de navegación por defecto */
+  nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #FFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000; /* Asegurarse de que el menú esté por encima de otros elementos */
+  }
+
+  /* Mostrar el menú cuando la clase 'active' se añade */
+  nav .nav-links.active {
+    display: block;
+  }
+
+  /* Cambiar color del icono de las barras */
+  .menu-icon .bar {
+    background-color: #FFB800; /* O cualquier color que desees para las barras */
+  }
+}
+
+
+/* Sección Hero */
+.hero {
+  background-image: url('../images/hero-bg.jpg'); /* Asegúrate de que la ruta de la imagen sea correcta */
+  background-size: cover; /* Asegura que la imagen cubra toda la sección */
+  background-position: center; /* Centra la imagen tanto horizontal como verticalmente */
+  color: #fff;
+  text-align: center;
+  display: flex; /* Usamos flexbox para centrar el contenido */
+  flex-direction: column; /* Alineamos los elementos de arriba a abajo */
+  justify-content: center; /* Centra el contenido verticalmente */
+  padding: 100px 20px; /* Ajusta el relleno según necesites */
+  min-height: 900px; /* Puedes ajustar la altura mínima según el contenido */
+  height: 100vh; /* Asegura que la sección hero ocupe toda la pantalla */
+}
+
+/* Contenido dentro de la hero */
+.hero-content {
+  max-width: 900px; /* Limita el ancho del contenido */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+
+.hero-content p {
+  font-family: "Gidugu", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  background-color: #3A86FF;
+  padding: 15px 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #FFB800;
+}
+
+/* Sección CTA */
+.cta-button {
+  background-color: #FFB800;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #ff9900;
+}
+
+/*Quienes somos?*/
+/* Contenedor principal */
+.row-container {
+  display: flex; /* Las columnas estarán en fila */
+  flex-wrap: nowrap; /* Evita que las columnas se apilen */
+  max-width: 1200px; /* Ajusta según el diseño deseado */
+  margin: 0 auto; /* Centra el contenedor */
+  gap: 20px; /* Espaciado entre columnas */
+  align-items: center; /* Alinea verticalmente los elementos */
+  margin-top: 50px;
+}
+
+/* Columna de Texto */
+.text-column {
+  flex: 1; /* Ocupa el espacio disponible proporcionalmente */
+  padding: 20px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.text-column h1 {
+  font-family: 'Oswald', sans-serif; /* Cambia la fuente aquí */
+  font-size: 40px; /* Ajusta el tamaño de la fuente aquí */
+  color: #3A86FF;
+  margin-bottom: 10px; /* Añade espacio debajo del h1 */
+}
+
+.text-column p {
+  margin-bottom: 30px;
+  font-size: 20px; /* Ajusta el tamaño de la fuente aquí */
+  font-family: 'Oswald', sans-serif; /* Cambia la fuente aquí */
+}
+
+/* Columna de Imagen */
+.image-column {
+  flex: 1; /* Ocupa el espacio disponible proporcionalmente */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+  margin-left: 100px;
+}
+
+/* Imagen dentro de la columna */
+.image-column img {
+  max-width: 100%; /* Ajusta el tamaño máximo */
+  height: auto; /* Mantiene la proporción */
+}
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+  .row-container {
+    flex-wrap: wrap; /* Permite apilar columnas en pantallas pequeñas */
+  }
+  .text-column, .image-column {
+    flex: 1 1 100%; /* Cada columna ocupa todo el ancho */
+    max-width: 100%;
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
+}
+
+.tiendas-container {
+  display: flex;
+  justify-content: space-between; /* Distribuye las imágenes con espacio entre ellas */
+  align-items: center; /* Alinea verticalmente las imágenes al centro */
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+.image-item {
+  flex: 1;
+  text-align: center; /* Centra la imagen dentro de su contenedor */
+}
+
+.image-item img {
+  max-width: 100%; /* Hace que las imágenes sean responsivas y se ajusten al tamaño del contenedor */
+  height: auto; /* Mantiene la proporción original de las imágenes */
+}
+
+
+/* Estilo para la sección de servicios */
+#services {
+  background-color: #ffb800;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3A86FF;
+  margin-bottom: 20px;
+}
+
+#services p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.service-item {
+  background-color: #fff;
+  padding: 30px;
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #3A86FF;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.service-item:hover {
+  transform: translateY(-10px); /* Eleva el servicio al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-item {
+  background-color: #fff;
+  padding: 30px;
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Centra el texto y el icono */
+}
+
+.service-icon {
+  width: 60px; /* Tamaño del icono */
+  height: 60px;
+  margin-bottom: 20px;
+  color: #3A86FF;
+}
+
+.service-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #3A86FF;
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%; /* Los servicios se apilan en pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+}
+
+/*FRASE MOTIVADORA*/
+.custom-heading-container {
+  text-align: center; /* Centra el texto */
+  margin-top: 100px; /* Margen superior */
+  margin-bottom: 100px; /* Margen inferior */
+}
+
+.custom-heading-title {
+  font-family: 'Oswald', sans-serif; /* Fuente que seleccionaste */
+  font-size: 50px; /* Tamaño de la fuente */
+  font-weight: 600; /* Peso de la fuente */
+  line-height: 1.4; /* Espaciado entre las líneas */
+  color: #3A86FF; /* Color que desees */
+  letter-spacing: 1px; /* Espaciado entre las letras */
+}
+
+/*MIS TRABAJOS*/
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* Estilos de la cuadrícula de portafolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 3fr));
+  gap: 30px;
+}
+
+/* Elementos individuales de portafolio */
+.portfolio-item {
+  background-color: #ffb800;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px); /* Efecto de desplazamiento al hacer hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+}
+
+/* Logo del cliente */
+.portfolio-logo img {
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Descripción de la experiencia del cliente */
+.portfolio-description {
+  font-size: 1rem;
+  color: #000;
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+/* Imagen del proyecto */
+.portfolio-image img {
+  width: 100%;
+  height: auto;
+  border-top: 0px solid #ddd;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .portfolio-item {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+/* CONTACTO */
+/* Estilo de la sección contacto */
+.contact-form-container {
+  background-image: url('../images/contact-bg.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra toda la sección */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Hace que la imagen no se mueva con el scroll */
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el cálculo del ancho total */
+}
+
+/* Contenido del formulario */
+.contact-form-content {
+  background: transparent; /* Elimina el fondo para ver la imagen de fondo */
+  padding: 20px;
+  box-shadow: none; /* Elimina cualquier sombra si la hubiera */
+  border-radius: 0;
+  text-align: center; /* Centra el texto del formulario */
+  width: 100%;
+  max-width: 800px; /* Ajusta el ancho máximo del formulario */
+}
+
+/* Títulos */
+.contact-form-content h2 {
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #fff;
+}
+
+.contact-form-content p {
+  margin-bottom: 50px;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+/* Formulario */
+.contact-form-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los campos */
+}
+
+/* Contenedor para los campos de Nombre y Teléfono */
+.contact-form-content .name-phone-container {
+  display: flex;
+  justify-content: space-between; /* Espacia los campos en línea */
+  gap: 15px; /* Espacio entre los campos */
+}
+
+.contact-form-content label {
+  color: #fff; /* Color del texto de los labels */
+  font-size: 1.1em;
+  text-align: left;
+}
+
+/* Estilo para los inputs y textarea */
+.contact-form-content input,
+.contact-form-content textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  border: none;
+  border-bottom: 1px solid #424242; /* Línea debajo de los campos */
+  background: transparent; /* Fondo transparente para ver la imagen */
+  color: #fff; /* Color del texto de los campos */
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+/* Placeholder (texto dentro de las cajas) */
+.contact-form-content input::placeholder,
+.contact-form-content textarea::placeholder {
+  color: #aaa; /* Color suave para el texto del placeholder */
+  font-style: italic; /* Estilo en cursiva para el placeholder */
+}
+
+/* Estilo cuando el input o textarea tiene foco (cuando el usuario hace clic en ellos) */
+.contact-form-content input:focus,
+.contact-form-content textarea:focus {
+  border-color: #FFB800; /* Cambia el color de la línea al hacer foco */
+  outline: none; /* Elimina el borde de enfoque por defecto */
+}
+
+/* Estilo para el botón */
+.contact-form-content button {
+  padding: 12px 20px;
+  background-color: #3A86FF;
+  color: #fff;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 25px; /* Redondear los bordes del botón */
+  width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+}
+
+.contact-form-content button:hover {
+  background-color: #FFB800; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilo para la caja de mensaje */
+.contact-form-content textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em; /* Igual que los otros campos */
+  border: none;
+  border-bottom: 1px solid #424242; /* Línea debajo del campo */
+  background: transparent; /* Fondo transparente para que se vea la imagen */
+  color: #fff; /* Color del texto */
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+  height: 150px; /* Ajusta la altura para que se vea más grande */
+  resize: none; /* Evita que el usuario redimensione la caja */
+}
+
+/* Placeholder (texto dentro de las cajas) */
+.contact-form-content textarea::placeholder {
+  color: #aaa; /* Color suave para el texto del placeholder */
+  font-style: italic; /* Estilo en cursiva para el placeholder */
+}
+
+/* Estilo cuando el textarea tiene foco (cuando el usuario hace clic en él) */
+.contact-form-content textarea:focus {
+  border-color: #FFB800; /* Cambia el color de la línea al hacer foco */
+  outline: none; /* Elimina el borde de enfoque por defecto */
+}
+
+
+
+
+/* Estilos generales para el footer */
+.footer {
+  background-color: #000; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Contenedor principal del footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo para cada sección dentro del footer */
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-contact,
+.footer-links,
+.footer-social {
+  width: 25%;
+}
+
+/* Estilo para los títulos */
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Lista de enlaces y contacto */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+ul li a:hover {
+  color: #FFB800; /* Resaltar enlaces */
+}
+
+/* Estilo para las redes sociales */
+.footer-social ul {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #FFB800;
+}
+
+/* Estilo para el pie de página */
+.footer-bottom {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}

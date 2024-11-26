@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Favicon para navegadores que usan tamaños específicos (puedes usar .png o .svg también) -->
+  <link rel="icon" href="images/LogoFavicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/LogoFavicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Civexa - Diseño Web</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gidugu&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gidugu&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="images/Logo.png" alt="Civexa Diseño Web">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#portfolio">Nuestros trabajos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-icon" id="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Script para el menú responsive -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+    
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    
+
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <p>TU SITIO WEB PROFESIONAL</p>
+            <h1>¡Hace realidad tu idea y potenciá tu negocio digital!</h1>
+            <a href="#contact" class="btn">¿Comenzamos?</a>
+        </div>
+    </section>
+
+    <div class="row-container">
+        <!-- Columna de Texto -->
+        <div class="text-column">
+        <h1 data-aos="fade-up" data-aos-duration="1000">Transforma tu eCommerce con soluciones innovadoras</h1>
+        <p>¡Impulsa tu marca y conquista el futuro digital con tecnología de vanguardia!</p>
+        </div>
+      
+        <!-- Columna de Imagen -->
+        <div class="image-column">
+          <img src="images/publicidad1.jpg" alt="civexadiseñadorweb">
+        </div>
+      </div>
+
+      <div class="tiendas-container">
+        <div class="image-item" data-aos="fade-in" data-aos-duration="1500">
+          <img src="images/empretienda.png" alt="Logo Empretienda" width="323" height="100" >
+        </div>
+        <div class="image-item" data-aos="zoom-in" data-aos-duration="1400">
+          <img src="images/tiendanube.png" alt="Logo TN Evolution" width="323" height="100">
+        </div>
+        <div class="image-item" data-aos="fade-in" data-aos-duration="1500">
+          <img src="images/woocomerce.png" alt="Logo WooCommerce" width="323" height="100">
+        </div>
+        <div class="image-item" data-aos="zoom-in" data-aos-duration="2200">
+            <img src="images/shopify.png" alt="Logo Shopify" width="323" height="100">
+          </div>
+      </div>
+    
+
+      <section id="services">
+        <h2 data-aos="fade-up" data-aos-duration="1000">Nuestros Servicios</h2>
+        <p data-aos="fade-up" data-aos-duration="1200">Ofrecemos soluciones de diseño web y desarrollo de tiendas online personalizadas para tu negocio.</p>
+        <div class="services-container">
+            <div class="service-item" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="images/diseno-de-respuesta.png" alt="Diseño Web" class="service-icon">
+                <h3>Diseño Web Personalizado</h3>
+                <p>Creación de sitios web únicos, con diseño a medida y optimizados para ofrecer una experiencia de usuario excelente.</p>
+              </div>
+          <div class="service-item" data-aos="zoom-in" data-aos-duration="1200">
+            <img src="images/tienda-online.png" alt="Tienda Online" class="service-icon">
+            <h3>Tiendas Online</h3>
+            <p>Desarrollamos tiendas online adaptadas a tus necesidades, con un diseño atractivo y fácil de usar, para que puedas vender tus productos de manera eficiente.</p>
+          </div>
+          <div class="service-item" data-aos="zoom-in" data-aos-duration="1400">
+            <img src="images/medios-de-comunicacion-social.png" alt="SEO y Marketing" class="service-icon">
+            <h3>SEO y Marketing Digital</h3>
+            <p>Mejoramos la visibilidad de tu sitio web en los motores de búsqueda con estrategias efectivas de SEO y marketing digital.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="custom-heading-container" data-aos="fade-in" data-aos-duration="1500">
+        <h2 class="custom-heading-title">
+        Transformar digitalmente una marca no debería ser un obstáculo,<br>
+        sino una oportunidad clara.<br>
+        Nuestro desafío es hacerlo de manera ágil y sin complicaciones.
+        </h2>
+      </div>
+      
+      <section class="portfolio">
+        <div class="container">
+          <div class="portfolio-grid">
+            <!-- Elemento de cliente 1 -->
+            <div class="portfolio-item">
+              <div class="portfolio-logo">
+                <a href="https://tracendent.com.ar"><img src="images/tracendent.png" alt="Logo Tracendent"></a>
+              </div>
+              <p class="portfolio-description">"Pagina de calidad como sus prendas !."</p>
+              <div class="portfolio-image">
+                <img src="images/tracendent1.png" alt="Proyecto Tracendent">
+              </div>
+            </div>          
+            <!-- Agregar más elementos de clientes aquí -->
+          </div>
+        </div>
+      </section>
+      
+      
+      <section id="contact" class="contacto-section">
+        <div class="contact-form-container">
+            <div class="contact-form-content" data-aos="fade-in" data-aos-duration="1500">
+                <h2>Contáctanos</h2>
+                <p>Si tienes alguna pregunta o quieres empezar un proyecto, ¡estamos aquí para ayudarte!</p>
+                
+                <!-- Formulario integrado con Formspree -->
+                <form action="https://formspree.io/f/xnnqgnrp" method="POST">
+                    
+                    <!-- Contenedor para nombre y teléfono en la misma línea -->
+                    <div class="name-phone-container">
+                        <div class="name-container">
+                            <input type="text" id="name" name="name" placeholder="Nombre" required>
+                        </div>
+                        <div class="phone-container">
+                            <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+                        </div>
+                    </div>
+    
+                    <!-- Email y mensaje -->
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                    <textarea id="message" name="message" rows="4" placeholder="Mensaje" maxlength="250" required></textarea>
+    
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <img src="images/Logo.png" alt="Logo de Civexa">
+            </div>
+    
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <h3>Contactos</h3>
+                <ul>
+                    <li><strong>Argentina:</strong> 29 n° 488 Mercedes Bs. As.</li>
+                    <li><strong>Teléfono:</strong> +54 9 2324-544091</li>
+                    <li><strong>Email:</strong> info@civexa.com</li>
+                </ul>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#">Nuestros Servicios</a></li>
+                    <li><a href="#">Tiendas Online</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social Media Links -->
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom (Copyright) -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Civexa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+          
+  <script src="js/scripts.js"></script>
+</body>
+</html>
